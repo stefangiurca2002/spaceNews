@@ -10,9 +10,17 @@ import { HomeComponent } from './home.component';
     CommonModule,
     RouterModule.forChild([
       {
-        path: '',
-        component: HomeComponent,
-        pathMatch: 'full'
+        path: 'news',
+        component: HomeComponent
+      },
+      {
+        path: 'blogs',
+        component: HomeComponent
+      },
+      {
+       path: '',
+       redirectTo: 'news',
+       pathMatch: 'full'
       }
     ])
   ]

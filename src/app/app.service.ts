@@ -10,6 +10,8 @@ export class AppService{
     private BlogsUrl = 'https://test.spaceflightnewsapi.net/api/v2/blogs?_limit=5&_start=';
     startNews = 0;
     startBlogs = 0;
+    newsResults = [];
+    blogsResults = [];
 
     constructor(
         private http: HttpClient

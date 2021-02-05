@@ -1,1 +1,17 @@
+<div class="navbar">
+    <div class="logo">
+      <img src="assets/logo.png" alt="spaceNews Logo">
+    </div>
+  
+    <div class="menu" #insideElement>
+      <div class="links" [ngClass]="{ hidden: hideMenu }">
+        <h3 [routerLink]="['/','home','news']">News</h3>
+        <h3 [routerLink]="['/','home','blogs']">Blog</h3>
+        <h3 routerLink="/events" routerLinkActive="active">Events</h3>
+      </div>
+      <div class="hamburger-toggle" (click)="hideMenu = !hideMenu">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </div>
 <router-outlet></router-outlet>
