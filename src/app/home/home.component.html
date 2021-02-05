@@ -1,0 +1,38 @@
+<div class="navbar">
+    <div class="logo">
+      <img src="assets/logo.png" alt="spaceNews Logo">
+    </div>
+  
+    <div class="menu" #insideElement>
+      <div class="links" [ngClass]="{ hidden: hideMenu }">
+        <h3 (click)="setNews()">News</h3>
+        <h3 (click)="setBlogs()" >Blog</h3>
+        <h3 routerLink="/events" routerLinkActive="active">Events</h3>
+      </div>
+      <div class="hamburger-toggle" (click)="hideMenu = !hideMenu">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </div>
+
+<div class="news-area"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()"
+>
+<div *ngFor="let art of content">
+<ion-card class="card">
+  <ion-card-header>
+    <ion-card-title>{{art.title}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <img src="{{art.imageUrl}}" alt="nu este" class="img-fluid images rounded mx-auto d-block">
+    <h1>{{art.summary}}</h1>
+    <a href="{{art.url}}">read more...</a>
+  </ion-card-content>
+</ion-card>
+</div>
+</div>  
+  
